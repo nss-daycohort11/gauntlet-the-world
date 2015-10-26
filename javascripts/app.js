@@ -3,15 +3,16 @@ $(document).ready(function() {
   /*
     Test code to generate a human player and an orc player
    */
-  var warrior = new Human();
-  warrior.setWeapon(new WarAxe());
-  warrior.generateClass();  // This will be used for "Surprise me" option
-  console.log(warrior.toString());
+  var Pilgrim = new Human();
+  Pilgrim.setWeapon(new Hammer());
+  Pilgrim.generateClass();  // This will be used for "Surprise me" option
+  console.log(Pilgrim.toString());
 
-  var orc = new Orc();
-  orc.generateClass();
-  orc.setWeapon(new BroadSword());
-  console.log(orc.toString());
+  var evilEx = new EvilEx();
+  evilEx.generateClass();
+  evilEx.setWeapon(new Sword());
+  console.log(evilEx);
+  console.log(evilEx.toString());
 
   /*
     Test code to generate a spell
@@ -57,6 +58,14 @@ $(document).ready(function() {
     var previousCard = $(this).attr("previous");
     $(".card").hide();
     $("." + previousCard).show();
+  });
+
+
+      // When the back button clicked, move back a view
+
+  $(".card__button").click(function(e) {
+    // console.log($(this).children().children()[1].getAttribute('name'));
+
   });
 
 });

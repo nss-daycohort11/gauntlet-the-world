@@ -1,7 +1,8 @@
-var Orc = function() {
+var EvilEx = function() {
   this.health = this.health + 20;
-  this.species = "Orc";
-  this.allowedClasses = ["Warrior", "Berserker", "Shaman"];
+  this.species = "Evil Ex";
+  this.allowedClasses = ["GideonGraves", "LucasLee", "EnvyAdams", "ToddIngram", "KyleKatanagi", "KenKatanagi", "MatthewPatel", "RoxyRichter"];
+  console.log(EvilEx);
 
   this.generateClass = function() {
     // Get a random index from the allowed classes array
@@ -16,5 +17,5 @@ var Orc = function() {
   }
 };
 
-Orc.prototype = new Monster();
+EvilEx.prototype = new Monster();
 
