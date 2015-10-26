@@ -92,9 +92,9 @@ body {
   padding-left: 12px;
   margin-right: -10px;
   font-weight: 600;
-  background-color: #333;
-  opacity: .4;
-  border-radius: 5px 0 0 5px;
+  background-color: #FFF;
+  opacity: 1;
+  border-radius: 5px;
   left: 37px;
   float: left;
 }

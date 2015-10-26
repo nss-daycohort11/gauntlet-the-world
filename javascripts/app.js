@@ -3,10 +3,10 @@ $(document).ready(function() {
   /*
     Test code to generate a human player and an orc player
    */
-  var ScottPilgrim = new Human();
-  ScottPilgrim.setWeapon(new Hammer());
-  ScottPilgrim.generateClass();  // This will be used for "Surprise me" option
-  console.log(ScottPilgrim.toString());
+  var Pilgrim = new Human();
+  Pilgrim.setWeapon(new Hammer());
+  Pilgrim.generateClass();  // This will be used for "Surprise me" option
+  console.log(Pilgrim.toString());
 
   var evilEx = new EvilEx();
   evilEx.generateClass();
@@ -58,6 +58,14 @@ $(document).ready(function() {
     var previousCard = $(this).attr("previous");
     $(".card").hide();
     $("." + previousCard).show();
+  });
+
+
+      // When the back button clicked, move back a view
+
+  $(".card__button").click(function(e) {
+    // console.log($(this).children().children()[1].getAttribute('name'));
+
   });
 
 });

@@ -41,12 +41,15 @@ Player.prototype.setWeapon = function(newWeapon) {
 Player.prototype.generateClass = function() {
   // Get a random index from the allowed classes array
   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
+  console.log(random);
 
   // Get the string at the index
   var randomClass = this.allowedClasses[random];
+  console.log(randomClass);
 
   // Composes the corresponding player class into the player object
   this.class = new window[randomClass]();
+  console.log(this.class);
 
   // Add the health bonus
   this.health += this.class.healthBonus;
@@ -67,7 +70,7 @@ var Human = function() {
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
 
-  this.allowedClasses = ["ScottPilgrim ", "RamonaFlowers", "NegaScott", "KimPines"];
+  this.allowedClasses = ["ScottPilgrim", "RamonaFlowers", "NegaScott", "KimPines"];
 };
 Human.prototype = new Player();
 

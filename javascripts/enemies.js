@@ -2,6 +2,7 @@ var EvilEx = function() {
   this.health = this.health + 20;
   this.species = "Evil Ex";
   this.allowedClasses = ["GideonGraves", "LucasLee", "EnvyAdams", "ToddIngram", "KyleKatanagi", "KenKatanagi", "MatthewPatel", "RoxyRichter"];
+  console.log(EvilEx);
 
   this.generateClass = function() {
     // Get a random index from the allowed classes array

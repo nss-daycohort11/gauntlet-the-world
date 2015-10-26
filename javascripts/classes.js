@@ -17,16 +17,15 @@ var PlayerClass = function() {
 
 /*
     FIGHTER CLASSES
-      Scott Pilgrim = Warrior
-      Ramona Flowers = Valkyrie
-      NegaScott = Berserker
+      Scott Pilgrim 
+      Ramona Flowers
+      NegaScott 
  */
 var Fighter = function() {
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
 Fighter.prototype = new PlayerClass();
-
 
 var ScottPilgrim = function() {
   this.name = "Scott Pilgrim"; 
@@ -35,17 +34,15 @@ var ScottPilgrim = function() {
 };
 ScottPilgrim.prototype = new Fighter();
 
-
 var RamonaFlowers = function() {
-  this.name = "Ramona Flowers"; //RamonaFlowers
+  this.name = "Ramona Flowers";
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
 };
 RamonaFlowers.prototype = new Fighter();
 
-
 var NegaScott = function() {
-  this.name = "NegaScott"; //NegaScott
+  this.name = "NegaScott"; 
   this.healthBonus = this.healthBonus + 35;
   this.strengthBonus = this.strengthBonus + 30;
 };
@@ -54,10 +51,9 @@ NegaScott.prototype = new Fighter();
 
 /*
     MUSICAL CLASSES
-      Kim Pines = Shaman
-      Steven Stills = Wizard
-      Young Neil = Conujurer
-      - Sorcerer
+      Kim Pines 
+      Steven Stills
+      Young Neil 
  */
 var Musician = function() {
   this.name = "Musician"; //Mage
@@ -68,32 +64,28 @@ var Musician = function() {
 };
 Musician.prototype = new PlayerClass();
 
-
 var KimPines = function() {
-  this.name = "Kim Pines"; //KimPines
+  this.name = "Kim Pines"; 
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus - 5;
   this.intelligenceBonus = this.intelligenceBonus + 25;
 };
 KimPines.prototype = new Musician();
 
-
 var StevenStills = function() {
-  this.name = "Steven Stills"; //StevenStills
+  this.name = "Steven Stills"; 
   this.healthBonus = this.healthBonus - 15;
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
 };
 StevenStills.prototype = new Musician();
 
-
 var YoungNeil = function() {
-  this.name = "Young Neil"; //YoungNeil
+  this.name = "Young Neil"; 
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
 };
 YoungNeil.prototype = new Musician();
-
 
 /*
     STALKER CLASSES
@@ -121,7 +113,7 @@ var KnivesChau = function() {
 };
 KnivesChau.prototype = new Stalker();
 
-//  BAD GUYS }: )
+//  BAD GUYS }: ) ---------------------------------------------------------------------------------------------------------------------------
 /*
     EVIL FIGHTER CLASSES
       Gideon Graves 
@@ -185,7 +177,7 @@ KyleKatanagi.prototype = new Musician();
 /*
     EVIL STALKER CLASSES
       Matthew Patel
-      Roxy Richter
+      Roxy
  */
 
 var MatthewPatel = function() {
