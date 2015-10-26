@@ -11,26 +11,39 @@
 
 <body>
 
+<!-- wrapper for game HTML elements -->
   <article id="game-container">
 
+<!--------------------------------------------------------------------------->
+<!-- LANDING PAGE for game -->
     <section id="player-setup" class="card card--name">
       <div class="card__prompt">
-        <div>RECORD YOUR NAME, ADVENTURER</div>
+        <div>RECORD YOUR NAME, AVENTURER</div>
+        <!-- User INPUT for player name -->
         <div class="field">
           <input type="text" autofocus="true" id="player-name" class="field__textinput">
         </div>
       </div>
 
+<!-- Select class button.  -->
+<!-- Notice use of Bootstrap classes for styling -->
       <div class="card__button">
+      <!-- button size and color classes -->
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
            next="card--class">
+           <!-- Button prompt: "greater than" symbol -->
           <span class="btn__prompt">></span>
+          <!-- Text displayed on Button -->
           <span class="btn__text">Select class</span>
         </a>
       </div>
     </section>
 
+
+<!--------------------------------------------------------------------------->
+<!-- CHOOSE YOUR PATH: select character type: PLAYER CLASS-->
+<!-- REF: Defined in "classes.js" -->
     <section id="class-select" class="card card--class">
       <div class="card__prompt">
         <div>CHOOSE YOUR PATH</div>
