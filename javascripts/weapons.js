@@ -8,24 +8,61 @@ var Weapon = function() {
   }
 };
 
-var Dagger = function() {
-  this.name = "dagger";
+// Physical Weapons
+var Knives = function() {
+  this.name = "knives";
   this.damage = 4;
   this.hands = 1;
 };
-Dagger.prototype = new Weapon();
+Knives.prototype = new Weapon();
 
-var BroadSword = function() {
-  this.name = "broad sword";
+var Sword = function() {
+  this.name = "sword";
   this.damage = 14;
   this.hands = 2;
 };
-BroadSword.prototype = new Weapon();
+Sword.prototype = new Weapon();
 
-var WarAxe = function() {
-  this.name = "war axe";
+var Hammer = function() {
+  this.name = "large hammer";
   this.damage = 18;
   this.hands = 2;
 };
-WarAxe.prototype = new Weapon();
+Hammer.prototype = new Weapon();
 
+var Gun = function() {
+  this.name = "ray gun";
+  this.damage = 14;
+  this.hands = 1;
+};
+Gun.prototype = new Weapon();
+
+
+// Musical Weapons
+var Guitar = function() {
+  this.name = "guitar";
+  this.damage = 4;
+  this.hands = 2;
+};
+Guitar.prototype = new Weapon();
+
+var Bass = function() {
+  this.name = "bass";
+  this.damage = 14;
+  this.hands = 2;
+};
+Bass.prototype = new Weapon();
+
+var Drums = function() {
+  this.name = "drums";
+  this.damage = 18;
+  this.hands = 2;
+};
+Drums.prototype = new Weapon();
+
+var Mic = function() {
+  this.name = "mic";
+  this.damage = 14;
+  this.hands = 1;
+};
+Mic.prototype = new Weapon();

@@ -3,15 +3,16 @@ $(document).ready(function() {
   /*
     Test code to generate a human player and an orc player
    */
-  var warrior = new Human();
-  warrior.setWeapon(new WarAxe());
-  warrior.generateClass();  // This will be used for "Surprise me" option
-  console.log(warrior.toString());
+  var ScottPilgrim = new Human();
+  ScottPilgrim.setWeapon(new Hammer());
+  ScottPilgrim.generateClass();  // This will be used for "Surprise me" option
+  console.log(ScottPilgrim.toString());
 
-  var orc = new Orc();
-  orc.generateClass();
-  orc.setWeapon(new BroadSword());
-  console.log(orc.toString());
+  var evilEx = new EvilEx();
+  evilEx.generateClass();
+  evilEx.setWeapon(new Sword());
+  console.log(evilEx);
+  console.log(evilEx.toString());
 
   /*
     Test code to generate a spell
