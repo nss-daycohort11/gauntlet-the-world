@@ -7,6 +7,7 @@ var PlayerClass = function() {
   this.strengthBonus = 0;
   this.intelligenceBonus = 0;
   this.evadeBonus = 0;
+  this.defenseBonus = 0;
   this.magical = false;
 
   this.toString = function() {
