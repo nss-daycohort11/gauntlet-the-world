@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gauntlet</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
+  <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
+</head>
+
+<body>
+
+  <article id="game-container">
+
+<section id="player-setup" class="card card--name">
+      <div class="card__prompt">
+      </div>
+
+    <div class="container-fluid">
+
+<!-- PLAYER STATS ROW -->
+<div class="row">
+<div class="col-md-4 col-xs-5 well playerStats">
+  <h1>PLAYER</h1>
+  <li>Health: 100hp</li>
+  <li>Intelligence</li>
+  <li>Evasion</li>
+  <li>Weapon: weapon</li>
+</div> <!-- END COL-MD-2 -->
+
+<!-- PLAYER STAT ROW SPACER -->
+  <div class="col-md-4 col-xs-2">
+        <div> 
+<img src="https://upload.wikimedia.org/wikipedia/fr/5/52/Scott_Pilgrim_vs._The_World_logo.png" class="img-responsive center-block">
+        </div>
+  </div>
+  
+<div class="col-md-4 col-xs-5 well enemyStats">
+  <h1>ENEMY</h1>
+  <li>Health: 100hp</li>
+  <li>Intelligence</li>
+  <li>Evasion</li>
+  <li>Weapon: weapon</li>
+</div> <!-- END COL-MD-2 -->
+</div> <!-- END ROW -->
+
+    <!-- BOOTSTRAP HEALTHBARS -->
+    <div class="row"> <!-- BEGIN ROW -->
+    <!-- PLAYER HEALTH BAR -->
+    <div class="col-md-6 col-xs-6">
+    <div class="progress player-health">
+      <div class="progress-bar progress-bar-success" style="width: 50%">
+        <span>**50% remHP**</span>
+      </div>
+      <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 10%">
+        <span class="sr-only">10% Complete (danger)</span>
+      </div>
+      </div>
+    </div> <!-- END COL-MD-6 -->
+
+<!-- ENEMY HEALTH BAR -->
+<div class="col-md-6 col-xs-6">
+    <div class="progress enemy-health">
+      <div class="progress-bar progress-bar-success" style="width: 35%">
+        <span>**remHP**</span>
+      </div>
+      <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 10%">
+        <span class="sr-only">10% Complete (danger)</span>
+      </div>
+      </div> <!-- END PROGRESS -->
+    </div> <!-- END COL-MD-6 -->
+</div> <!-- END ROW -->
+
+<!-- battleground image -->
+<div class="row">
+<div class="col-md-12 well">
+            <img src="http://westsidestage.com/wp-content/uploads/2014/04/FreeGreatPicture.com-9951-beautiful-hd-pictures-stage-1600x1130.jpg" class="img-responsive center-block" alt="Battlefield">
+</div> <!-- END COL-MD-12 -->
+</div> <!-- END ROW -->
+
+<!-- ATTACK BUTTON -->
+          <div class="card__button">
+            <a class="card__link btn btn--big btn--orange" 
+               href="#" 
+               next="card--class">
+              <span class="btn__prompt">**</span>
+              <span class="btn__text">ATTACK</span>
+            </a>
+          </div>
+    </div>
+        </section>
+
+    </article>
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="javascripts/player.js"></script>
+  <script src="javascripts/classes.js"></script>
+  <script src="javascripts/weapons.js"></script>
+  <script src="javascripts/spells.js"></script>
+  <script src="javascripts/enemies.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+</html>
