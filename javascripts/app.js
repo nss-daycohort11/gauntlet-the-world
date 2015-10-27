@@ -112,9 +112,9 @@ $(document).ready(function() {
       };
     if (clickedButton === "ScottPilgrim") {
 
-//      console.log("That was Scott", newPlayer);
+      console.log("That was Scott", newPlayer);
       newPlayer.class = new ScottPilgrim;
-//      console.log("This is the new Scott", newPlayer);
+      console.log("This is the new Scott", newPlayer);
 
       } else if (clickedButton === "RamonaFlowers") {
       newPlayer.class = new RamonaFlowers;
@@ -185,18 +185,18 @@ $(document).ready(function() {
       if (newPlayer.weapon === null) {
         newPlayer.weapon = new Weapon;
       }
-
-      console.log("This is who you are", newPlayer);
-      console.log("This is your class", newPlayer.class);
-      console.log("This is your weapon", newPlayer.weapon);
-
+    }
+ 
       // Create Random Enemy
       var opponent = new Player();
       opponent.generateClass();
       opponent.setWeapon(new Sword());
 
       // Populate Enemy Stat box
-
+//      console.log("Looking for attack", $(this).children().children()[1]);
+      if (clickedButton === "attack") {
+            console.log("You attacked!!!!");
+      }
 
   }); //End of Click event handler
 
