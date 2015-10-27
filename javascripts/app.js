@@ -15,11 +15,18 @@ $(document).ready(function() {
       $("#profile").hide();
   });
   
- // Pick Character hover section with stats.
+ // Pick Character hover section with 2 stats.
   $(".tiptext").mouseover(function() {
     $(this).children(".description").show();
     }).mouseout(function() {
     $(this).children(".description").hide();
+  });
+
+ // Pick Character hover section with 3 stats.
+  $(".tiptext").mouseover(function() {
+    $(this).children(".descriptionBig").show();
+    }).mouseout(function() {
+    $(this).children(".descriptionBig").hide();
   });
 
   /*
