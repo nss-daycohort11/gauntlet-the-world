@@ -1,26 +1,45 @@
 
 body {
-  font-family: pixelatedFont;
+  font-family: VT323;
   margin: 0;
   padding: 10px;
-  font-size: 3em;
+  font-size: 4em;
   /*background-color: red;*/
 }
 
-/*@font-face {
-  font-family: pixelatedFont;
-  src: url("stan0753.eot?") format("eot"),url("stan0753.woff") format("woff"),url("stan0753.ttf") format("truetype"),url("stan0753.svg#Standard0753") format("svg");
-  font-weight: normal;
-  font-style: normal;*/
+div.card__prompt {
+  font-famil: VT323;
 }
 
 /* Pick Character hover section with stats.*/
-.parent-popup .popup {
-  display: none;
+.tiptext {
+    background: #ccc;
+    border: 1px #333 solid;
+    padding: 5px;
+    width: 100px;
+}
+.description {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 300px;
+    height: 100px;
 }
 
-.parent-popup:hover {
-  display: block;
+/*This section is styling for weapons card.*/
+
+img.sword, img.hammer, img.guitar, img.bass {
+  padding: 3px;
+}
+
+img.drum {
+  padding: 3px;
+  margin: 10px 0 10px 0;
 }
 
 .field {

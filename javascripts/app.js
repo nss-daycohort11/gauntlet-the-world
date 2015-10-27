@@ -13,6 +13,13 @@ $(document).ready(function() {
       $("#class-select-good").hide();
       $("#profile").hide();
   });
+  
+ // Pick Character hover section with stats.
+  $(".tiptext").mouseover(function() {
+    $(this).children(".description").show();
+    }).mouseout(function() {
+    $(this).children(".description").hide();
+  });
 
   /*
     Test code to generate a human player and an orc player
