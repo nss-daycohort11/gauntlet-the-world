@@ -14,31 +14,35 @@ $(document).ready(function() {
       $("#profile").hide();
   });
 
-
   /*
     Test code to generate a human player and an orc player
    */
   var Pilgrim = new Human();
   Pilgrim.setWeapon(new Hammer());
   Pilgrim.generateClass();  // This will be used for "Surprise me" option
-  console.log(Pilgrim.toString());
+  // console.log(Pilgrim.toString());
 
   var evilEx = new EvilEx();
   evilEx.generateClass();
   evilEx.setWeapon(new Sword());
-  console.log(evilEx);
-  console.log(evilEx.toString());
+  //console.log(evilEx);
+  // console.log(evilEx.toString());
 
   /*
     Test code to generate a spell
    */
   var spell = new Sphere();
-  console.log("spell: ", spell.toString());
+  // console.log("spell: ", spell.toString());
 
 
   /*
     END OF TEST CODE
 
+
+
+
+
+  // BEGIN GAME HEREEEEEEEE
     Show the initial view that accepts player name
    */
   $("#player-setup").show();
@@ -59,6 +63,9 @@ $(document).ready(function() {
         break;
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
+        break;
+        case "card--battleground":
+        moveAlong =($("#player-name").val() !== "");
         break;
     }
 
@@ -163,8 +170,18 @@ $(document).ready(function() {
       newPlayer.weapon = clickedButton;
     };
 
+
+
+// START GAMEPLAY
+
      if (clickedButton === "Start") {
       console.log("FIGHT!");
+      console.log(newPlayer);
+
+      // Create Random Enemy
+      var opponent = new Human();
+      opponent.generateClass();
+      opponent.setWeapon(new Sword());
     }
 
   }); //End of Click event handler
