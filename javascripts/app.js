@@ -73,8 +73,21 @@ $(document).ready(function() {
    */
   $(".card__back").click(function(e) {
     var previousCard = $(this).attr("previous");
+    console.log("what cardis this?", previousCard);
+
     $(".card").hide();
+    if (previousCard === "card--name") {
     $("." + previousCard).show();
+    } else {
+    if (newPlayer.isGood === true) {
+      $("#class-select-bad").hide();
+      $("#class-select-good").show();
+    } else if (newPlayer.isGood === false) {
+      $("#class-select-bad").show();
+      $("#class-select-good").hide();
+    }
+
+    }
   });
 
 
