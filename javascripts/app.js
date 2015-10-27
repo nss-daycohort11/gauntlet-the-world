@@ -122,12 +122,47 @@ $(document).ready(function() {
       newPlayer.class = clickedButton;
     }else if (clickedButton === "KnivesChau") {
       newPlayer.class = clickedButton;
+    } else if (clickedButton === "GideoGraves") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "LucasLee") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "MatthewPatel") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "EnvyAdams") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "ToddIngram") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "KenKyleKatanagi") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "LynetteGuycott") {
+      newPlayer.class = clickedButton;
+    }else if (clickedButton === "RoxyRichter") {
+      newPlayer.class = clickedButton;
     } else if (clickedButton === "Surprise") {
       newPlayer.class = "Surprise";
     //options are to either have a massive if/else statement, or put an extra value/class/id on button
     //If the extra value on button is true then: newPlayer.class = clickedButton
     //How to execute the generateClass function?
-    }
-  });
+    } //End off character class selection
+
+    if (clickedButton === "Sword") {
+      newPlayer.weapon = clickedButton;
+    } else if (clickedButton === "Hammer") {
+      newPlayer.weapon = clickedButton;
+    }else if (clickedButton === "Gun") {
+      newPlayer.weapon = clickedButton;
+    }else if (clickedButton === "Knives") {
+      newPlayer.weapon = clickedButton;
+    }else if (clickedButton === "Guitar") {
+      newPlayer.weapon = clickedButton;
+    }else if (clickedButton === "Bass") {
+      newPlayer.weapon = clickedButton;
+    }else if (clickedButton === "Drums") {
+      newPlayer.weapon = clickedButton;
+    }else if (clickedButton === "Mic") {
+      newPlayer.weapon = clickedButton;
+    };
+
+  }); //End of Click event handler
 
 });
