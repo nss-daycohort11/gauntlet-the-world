@@ -100,6 +100,7 @@ $(document).ready(function() {
     //options are to either have a massive if/else statement, or put an extra value/class/id on button
     //If the extra value on button is true then: newPlayer.class = clickedButton
     //How to execute the generateClass function?
+    }
   });
 
 });
