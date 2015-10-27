@@ -14,7 +14,9 @@ var Player = function(name) {
   this.skinColors = [this.skinColor];
   this.strength = 90;
   this.intelligence = 90;
+  this.intelligence = 5;
 
+  this.allowedClasses = ["ScottPilgrim", "RamonaFlowers", "NegaScott", "KimPines", "KnivesChau", "StevenStills", "YoungNeil", "WallaceWells"]
   this.toString = function() {
     var output = [this.playerName,
       ": a ",
@@ -53,6 +55,9 @@ Player.prototype.generateClass = function() {
 
   // Add the health bonus
   this.health += this.class.healthBonus;
+  this.strength += this.class.strengthBonus;
+  this.intelligence += this.class.intelligenceBonus;
+  this.evade += this.class.evadeBonus;
   return this.class;
 };
 
