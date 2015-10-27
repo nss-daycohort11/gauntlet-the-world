@@ -1,5 +1,19 @@
 $(document).ready(function() {
 
+// Switch between good and bad characters.
+
+  $("#class-good").click(function() {
+      $("#class-select-bad").hide();
+      $("#class-select-good").show();
+  });
+
+  $("#class-bad").click(function() {
+      $("#class-select-bad").show();
+      $("#class-select-good").hide();
+      $("#profile").hide();
+  });
+
+
   /*
     Test code to generate a human player and an orc player
    */
