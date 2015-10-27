@@ -1,4 +1,5 @@
 var newPlayer = {};
+var opponent = {};
 $(document).ready(function() {
 
 // Switch between good and bad characters.
@@ -58,7 +59,6 @@ $(document).ready(function() {
     switch (nextCard) {
       case "card--class":
         newPlayer = new Player($("#player-name").val());
-        console.log("newPlayer", newPlayer);
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
@@ -111,11 +111,7 @@ $(document).ready(function() {
         newPlayer.isGood = false;
       };
     if (clickedButton === "ScottPilgrim") {
-
-      console.log("That was Scott", newPlayer);
       newPlayer.class = new ScottPilgrim;
-      console.log("This is the new Scott", newPlayer);
-
       } else if (clickedButton === "RamonaFlowers") {
       newPlayer.class = new RamonaFlowers;
     }else if (clickedButton === "NegaScott") {
@@ -180,23 +176,54 @@ $(document).ready(function() {
         newPlayer.class = new PlayerClass;
       } else if (newPlayer.class === "Surprise") {
         newPlayer.generateClass();
+      } else {
+          console.log("newPlayer",newPlayer);
+          console.log("our Health before modifying", newPlayer.health);
+          newPlayer.health += newPlayer.class.healthBonus;
+          newPlayer.strength +=  newPlayer.class.strengthBonus;
+          newPlayer.intelligence +=  newPlayer.class.intelligenceBonus;
+          newPlayer.evade += newPlayer.class.evadeBonus;
       };
-
+      var playerMaxHealth = newPlayer.health;
       if (newPlayer.weapon === null) {
         newPlayer.weapon = new Weapon;
       }
-    }
- 
       // Create Random Enemy
-      var opponent = new Player();
+      opponent = new Player();
       opponent.generateClass();
       opponent.setWeapon(new Sword());
+      var opponentMaxHealth = opponent.health;
 
-      // Populate Enemy Stat box
-//      console.log("Looking for attack", $(this).children().children()[1]);
+      // Populate Initial Stat boxes
+      // Player stat box
+      $(".playerName").html(newPlayer.playerName+" playing as");
+      $(".playerClass").html(newPlayer.class.name);
+      $(".playerWeapon").html("Wpn: "+newPlayer.weapon.name);
+      $(".playerHP").html("HP: "+newPlayer.health);
+
+      // Opponent Stat Box
+      $(".opponentClass").html(opponent.class.name);
+      $(".opponentWeapon").html("Wpn: "+opponent.weapon.name);
+      $(".opponentHP").html("HP: "+opponent.health);
+    }
+ 
+
+      // Attack GAMEPLAY
       if (clickedButton === "attack") {
             console.log("You attacked!!!!");
+            console.log("newPlayer",newPlayer);
+            console.log("Opponent",opponent)
+            newPlayer.health -= opponent.strength * 0.1 + opponent.weapon.damage;
+      $(".opponentHP").html("HP: "+opponent.health);
+
+            opponent.health -= newPlayer.strength*0.1 + newPlayer.weapon.damage;
+      $(".playerHP").html("HP: "+newPlayer.health);
+            
+      console.log("after attack us Health", newPlayer.health);
+      console.log("after attack their Health", opponent.health);
       }
+
+
 
   }); //End of Click event handler
 

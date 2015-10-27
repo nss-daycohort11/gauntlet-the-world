@@ -376,7 +376,12 @@
 <div class="row">
 
 <!-- PLAYER STATS container -->
-<div class="col-md-4 col-xs-5 well playerStats"></div>
+<div class="col-md-4 col-xs-5 well playerStats">
+  <div class="playerName"></div>
+  <div class="playerClass"></div>
+  <div class="playerWeapon"></div>
+  <div class="playerHP"></div>
+</div>
 
 <!-- PLAYER STAT ROW SPACER -->
   <div class="col-md-4 col-xs-2">
@@ -386,7 +391,12 @@
   </div>
 
 <!-- OPPONENT STATS container -->
-<div class="col-md-4 col-xs-5 well enemyStats"></div>
+<div class="col-md-4 col-xs-5 well enemyStats">
+  <div class="opponentName"></div>
+  <div class="opponentClass"></div>
+  <div class="opponentWeapon"></div>
+  <div class="opponentHP"></div>
+</div>
 
 </div> <!-- END ROW -->
 
@@ -394,26 +404,26 @@
     <div class="row"> <!-- BEGIN ROW -->
     <!-- PLAYER HEALTH BAR -->
     <div class="col-md-6 col-xs-6">
-    <div class="progress player-health">
-      <div class="progress-bar progress-bar-success" style="width: 50%">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success player-health" style="width: 50%">
         <span>**50% remHP**</span>
       </div>
-      <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 10%">
+<!--      <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 10%">
         <span class="sr-only">10% Complete (danger)</span>
       </div>
-      </div>
+ -->      </div>
     </div> <!-- END COL-MD-6 -->
 
 <!-- ENEMY HEALTH BAR -->
 <div class="col-md-6 col-xs-6">
-    <div class="progress enemy-health">
-      <div class="progress-bar progress-bar-success" style="width: 35%">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success opponent-health" style="width: 35%">
         <span>**remHP**</span>
       </div>
-      <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 10%">
+<!--       <div class="progress-bar progress-bar-danger progress-bar-striped active" style="width: 10%">
         <span class="sr-only">10% Complete (danger)</span>
       </div>
-      </div> <!-- END PROGRESS -->
+ -->      </div> <!-- END PROGRESS -->
     </div> <!-- END COL-MD-6 -->
 </div> <!-- END ROW -->
 

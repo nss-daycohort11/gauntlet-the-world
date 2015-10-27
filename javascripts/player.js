@@ -14,7 +14,7 @@ var Player = function(name) {
   this.skinColors = [this.skinColor];
   this.strength = 90;
   this.intelligence = 90;
-  this.intelligence = 5;
+  this.evade = 5;
 
   this.allowedClasses = ["ScottPilgrim", "RamonaFlowers", "NegaScott", "KimPines", "KnivesChau", "StevenStills", "YoungNeil", "WallaceWells"]
   this.toString = function() {
@@ -51,7 +51,6 @@ Player.prototype.generateClass = function() {
 
   // Composes the corresponding player class into the player object
   this.class = new window[randomClass]();
-  console.log(this.class);
 
   // Add the health bonus
   this.health += this.class.healthBonus;
