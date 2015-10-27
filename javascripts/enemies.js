@@ -1,7 +1,7 @@
 var EvilEx = function() {
   this.health = this.health + 20;
   this.species = "Evil Ex";
-  this.allowedClasses = ["GideonGraves", "LucasLee", "EnvyAdams", "ToddIngram", "KyleKatanagi", "KenKatanagi", "MatthewPatel", "RoxyRichter"];
+  this.allowedClasses = ["GideonGraves", "LucasLee", "EnvyAdams", "ToddIngram", "LynetteGuycott", "KenKyleKatanagi", "MatthewPatel", "RoxyRichter"];
   console.log(EvilEx);
 
   this.generateClass = function() {

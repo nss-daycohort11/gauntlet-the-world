@@ -118,6 +118,7 @@ KnivesChau.prototype = new Stalker();
     EVIL FIGHTER CLASSES
       Gideon Graves 
       Lucas Lee
+      Matthew Patel
  */
 
 var GideonGraves = function() {
@@ -134,12 +135,18 @@ var LucasLee = function() {
 };
 LucasLee.prototype = new Fighter();
 
+var MatthewPatel = function() {
+  this.name = "Matthew Patel"; 
+  this.healthBonus = this.healthBonus + 5;
+  this.evadeBonus = this.evadeBonus + 15;
+};
+MatthewPatel.prototype = new Fighter();
+
 /*
     EVIL MUSICAL CLASSES
       Envy Adams
       Todd Ingram
-      Ken Katanagi
-      Kyle Katanagi
+      Ken & Kyle Katanagi
  */
 
 var EnvyAdams = function() {
@@ -158,34 +165,28 @@ var ToddIngram = function() {
 };
 ToddIngram.prototype = new Musician();
 
-var KenKatanagi = function() {
-  this.name = "Ken Katanagi"; 
+var KenKyleKatanagi = function() {
+  this.name = "Katanagi Twins"; 
   this.healthBonus = this.healthBonus + 5;
   this.strengthBonus = this.strengthBonus - 5;
   this.intelligenceBonus = this.intelligenceBonus + 25;
 };
-KenKatanagi.prototype = new Musician();
+KenKyleKatanagi.prototype = new Musician();
 
-var KyleKatanagi = function() {
-  this.name = "Kyle Katanagi"; 
-  this.healthBonus = this.healthBonus + 5;
-  this.strengthBonus = this.strengthBonus - 5;
-  this.intelligenceBonus = this.intelligenceBonus + 25;
-};
-KyleKatanagi.prototype = new Musician();
 
 /*
     EVIL STALKER CLASSES
-      Matthew Patel
+      Lynette Guycott
       Roxy
+
  */
 
-var MatthewPatel = function() {
-  this.name = "Matthew Patel"; 
+var LynetteGuycott = function() {
+  this.name = "Lynette Guycott"; 
   this.healthBonus = this.healthBonus + 5;
   this.evadeBonus = this.evadeBonus + 15;
 };
-MatthewPatel.prototype = new Stalker();
+LynetteGuycott.prototype = new Stalker();
 
 var RoxyRichter = function() {
   this.name = "Roxy Richter"; 
