@@ -1,4 +1,5 @@
 var newPlayer = {};
+var opponent = {};
 $(document).ready(function() {
 
 // Switch between good and bad characters.
@@ -65,7 +66,6 @@ $(document).ready(function() {
     switch (nextCard) {
       case "card--class":
         newPlayer = new Player($("#player-name").val());
-        console.log("newPlayer", newPlayer);
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
@@ -87,7 +87,7 @@ $(document).ready(function() {
    */
   $(".card__back").click(function(e) {
     var previousCard = $(this).attr("previous");
-    console.log("what cardis this?", previousCard);
+//    console.log("what cardis this?", previousCard);
 
     $(".card").hide();
     if (previousCard === "card--name") {
@@ -106,22 +106,19 @@ $(document).ready(function() {
 
 
       // When any button is clicked, update player values
-
   $(".card__button").click(function(e) {
-    console.log($(this).children().children()[1].getAttribute('name'));
+//    console.log($(this).children().children()[1].getAttribute('name'));
     var clickedButton = $(this).children().children()[1].getAttribute('name');
 
-    console.log("clickedButton:", clickedButton);
+//    console.log("clickedButton:", clickedButton);
     if (clickedButton === "good") {
       newPlayer.isGood = true;
-      console.log("is Good:", clickedButton);
+//     console.log("is Good:", clickedButton);
       } else if (clickedButton === "bad") {
         newPlayer.isGood = false;
       };
     if (clickedButton === "ScottPilgrim") {
-      console.log("That was Scott", newPlayer);
       newPlayer.class = new ScottPilgrim;
-      console.log("This is the new Scott", newPlayer);
       } else if (clickedButton === "RamonaFlowers") {
       newPlayer.class = new RamonaFlowers;
     }else if (clickedButton === "NegaScott") {
@@ -180,28 +177,60 @@ $(document).ready(function() {
 
 
 // START GAMEPLAY
-
      if (clickedButton === "Start") {
       console.log("FIGHT!");
       if (newPlayer.class === null) {
         newPlayer.class = new PlayerClass;
       } else if (newPlayer.class === "Surprise") {
         newPlayer.generateClass();
+      } else {
+          console.log("newPlayer",newPlayer);
+          console.log("our Health before modifying", newPlayer.health);
+          newPlayer.health += newPlayer.class.healthBonus;
+          newPlayer.strength +=  newPlayer.class.strengthBonus;
+          newPlayer.intelligence +=  newPlayer.class.intelligenceBonus;
+          newPlayer.evade += newPlayer.class.evadeBonus;
       };
-
+      var playerMaxHealth = newPlayer.health;
       if (newPlayer.weapon === null) {
         newPlayer.weapon = new Weapon;
       }
-
-      console.log("This is who you are", newPlayer);
-      console.log("This is your class", newPlayer.class);
-      console.log("This is your weapon", newPlayer.weapon);
-
       // Create Random Enemy
-      var opponent = new Player();
+      opponent = new Player();
       opponent.generateClass();
       opponent.setWeapon(new Sword());
+      var opponentMaxHealth = opponent.health;
+
+      // Populate Initial Stat boxes
+      // Player stat box
+      $(".playerName").html(newPlayer.playerName+" playing as");
+      $(".playerClass").html(newPlayer.class.name);
+      $(".playerWeapon").html("Wpn: "+newPlayer.weapon.name);
+      $(".playerHP").html("HP: "+newPlayer.health);
+
+      // Opponent Stat Box
+      $(".opponentClass").html(opponent.class.name);
+      $(".opponentWeapon").html("Wpn: "+opponent.weapon.name);
+      $(".opponentHP").html("HP: "+opponent.health);
     }
+ 
+
+      // Attack GAMEPLAY
+      if (clickedButton === "attack") {
+            console.log("You attacked!!!!");
+            console.log("newPlayer",newPlayer);
+            console.log("Opponent",opponent)
+            newPlayer.health -= opponent.strength * 0.1 + opponent.weapon.damage;
+      $(".opponentHP").html("HP: "+opponent.health);
+
+            opponent.health -= newPlayer.strength*0.1 + newPlayer.weapon.damage;
+      $(".playerHP").html("HP: "+newPlayer.health);
+            
+      console.log("after attack us Health", newPlayer.health);
+      console.log("after attack their Health", opponent.health);
+      }
+
+
 
   }); //End of Click event handler
 
