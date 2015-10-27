@@ -163,6 +163,10 @@ $(document).ready(function() {
       newPlayer.weapon = clickedButton;
     };
 
+     if (clickedButton === "Start") {
+      console.log("FIGHT!");
+    }
+
   }); //End of Click event handler
 
 });
