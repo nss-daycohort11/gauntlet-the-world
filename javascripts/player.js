@@ -41,11 +41,11 @@ Player.prototype.setWeapon = function(newWeapon) {
 Player.prototype.generateClass = function() {
   // Get a random index from the allowed classes array
   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-  console.log(random);
+//  console.log(random);
 
   // Get the string at the index
   var randomClass = this.allowedClasses[random];
-  console.log(randomClass);
+//  console.log(randomClass);
 
   // Composes the corresponding player class into the player object
   this.class = new window[randomClass]();
@@ -84,6 +84,5 @@ var Monster = function() {
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
 };
-
 Monster.prototype = new Player();
 

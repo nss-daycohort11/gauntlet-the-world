@@ -80,7 +80,7 @@ $(document).ready(function() {
    */
   $(".card__back").click(function(e) {
     var previousCard = $(this).attr("previous");
-    console.log("what cardis this?", previousCard);
+//    console.log("what cardis this?", previousCard);
 
     $(".card").hide();
     if (previousCard === "card--name") {
@@ -99,22 +99,21 @@ $(document).ready(function() {
 
 
       // When any button is clicked, update player values
-
   $(".card__button").click(function(e) {
-    console.log($(this).children().children()[1].getAttribute('name'));
+//    console.log($(this).children().children()[1].getAttribute('name'));
     var clickedButton = $(this).children().children()[1].getAttribute('name');
 
-    console.log("clickedButton:", clickedButton);
+//    console.log("clickedButton:", clickedButton);
     if (clickedButton === "good") {
       newPlayer.isGood = true;
-      console.log("is Good:", clickedButton);
+//     console.log("is Good:", clickedButton);
       } else if (clickedButton === "bad") {
         newPlayer.isGood = false;
       };
     if (clickedButton === "ScottPilgrim") {
-      console.log("That was Scott", newPlayer);
+//      console.log("That was Scott", newPlayer);
       newPlayer.class = clickedButton;
-      console.log("This is the new Scott", newPlayer);
+//      console.log("This is the new Scott", newPlayer);
       } else if (clickedButton === "RamonaFlowers") {
       newPlayer.class = clickedButton;
     }else if (clickedButton === "NegaScott") {
@@ -174,15 +173,19 @@ $(document).ready(function() {
 
 // START GAMEPLAY
 
-     if (clickedButton === "Start") {
-      console.log("FIGHT!");
-      console.log(newPlayer);
+     if (clickedButton === "Start") {      
+      // Populate player stat boxes
+      var playerStats = $("playerStats");
+      console.log(playerStats);
+      }
 
       // Create Random Enemy
       var opponent = new Human();
       opponent.generateClass();
       opponent.setWeapon(new Sword());
-    }
+
+      // Populate Enemy Stat box
+
 
   }); //End of Click event handler
 
