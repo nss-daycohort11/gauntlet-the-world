@@ -113,38 +113,38 @@ $(document).ready(function() {
       };
     if (clickedButton === "ScottPilgrim") {
       console.log("That was Scott", newPlayer);
-      newPlayer.class = clickedButton;
+      newPlayer.class = new ScottPilgrim;
       console.log("This is the new Scott", newPlayer);
       } else if (clickedButton === "RamonaFlowers") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new RamonaFlowers;
     }else if (clickedButton === "NegaScott") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new NegaScott;
     }else if (clickedButton === "KimPines") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new KimPines;
     }else if (clickedButton === "StevenStills") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new StevenStills;
     }else if (clickedButton === "YoungNeil") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new YoungNeil;
     }else if (clickedButton === "WallaceWells") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new WallaceWells;
     }else if (clickedButton === "KnivesChau") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new KnivesChau;
     } else if (clickedButton === "GideoGraves") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new GideoGraves;
     }else if (clickedButton === "LucasLee") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new LucasLee;
     }else if (clickedButton === "MatthewPatel") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new MatthewPatel;
     }else if (clickedButton === "EnvyAdams") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new EnvyAdams;
     }else if (clickedButton === "ToddIngram") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new ToddIngram;
     }else if (clickedButton === "KenKyleKatanagi") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new KenKyleKatanagi;
     }else if (clickedButton === "LynetteGuycott") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new LynetteGuycott;
     }else if (clickedButton === "RoxyRichter") {
-      newPlayer.class = clickedButton;
+      newPlayer.class = new RoxyRichter;
     } else if (clickedButton === "Surprise") {
       newPlayer.class = "Surprise";
     //options are to either have a massive if/else statement, or put an extra value/class/id on button
@@ -153,21 +153,21 @@ $(document).ready(function() {
     } //End off character class selection
 
     if (clickedButton === "Sword") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Sword;
     } else if (clickedButton === "Hammer") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Hammer;
     }else if (clickedButton === "Gun") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Gun;
     }else if (clickedButton === "Knives") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Knives;
     }else if (clickedButton === "Guitar") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Guitar;
     }else if (clickedButton === "Bass") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Bass;
     }else if (clickedButton === "Drums") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Drums;
     }else if (clickedButton === "Mic") {
-      newPlayer.weapon = clickedButton;
+      newPlayer.weapon = new Mic;
     };
 
 
@@ -176,10 +176,22 @@ $(document).ready(function() {
 
      if (clickedButton === "Start") {
       console.log("FIGHT!");
-      console.log(newPlayer);
+      if (newPlayer.class === null) {
+        newPlayer.class = new PlayerClass;
+      } else if (newPlayer.class === "Surprise") {
+        newPlayer.generateClass();
+      };
+
+      if (newPlayer.weapon === null) {
+        newPlayer.weapon = new Weapon;
+      }
+
+      console.log("This is who you are", newPlayer);
+      console.log("This is your class", newPlayer.class);
+      console.log("This is your weapon", newPlayer.weapon);
 
       // Create Random Enemy
-      var opponent = new Human();
+      var opponent = new Player();
       opponent.generateClass();
       opponent.setWeapon(new Sword());
     }
