@@ -1,19 +1,6 @@
 var newPlayer = {};
 var opponent = {};
 $(document).ready(function() {
-
-// Switch between good and bad characters.
-
-  $("#class-good").click(function() {
-      $("#class-select-bad").hide();
-      $("#class-select-good").show();
-  });
-
-  $("#class-bad").click(function() {
-      $("#class-select-bad").show();
-      $("#class-select-good").hide();
-      $("#profile").hide();
-  });
   
  // Pick Character hover section with stats.
   $(".tiptext").mouseover(function() {
@@ -71,15 +58,32 @@ $(document).ready(function() {
       case "card--weapon":
         moveAlong = ($("#player-name").val() !== "");
         break;
-        case "card--battleground":
+      case "card--battleground":
         moveAlong =($("#player-name").val() !== "");
         break;
     }
-
+    console.log("isGood", newPlayer.isGood);
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
     }
+
+    // Switch between good and bad characters.
+
+    $("#class-good").click(function() {
+      if (moveAlong) {
+        $("#class-select-bad").hide();
+        $("#class-select-good").show();
+      }
+    });
+
+    $("#class-bad").click(function() {
+      if (moveAlong) {
+        $("#class-select-bad").show();
+        $("#class-select-good").hide();
+      }
+    });
+  
   });
 
   /*
@@ -96,12 +100,12 @@ $(document).ready(function() {
     if (newPlayer.isGood === true) {
       $("#class-select-bad").hide();
       $("#class-select-good").show();
-    } else if (newPlayer.isGood === false) {
+      } else if (newPlayer.isGood === false) {
       $("#class-select-bad").show();
       $("#class-select-good").hide();
+      }
     }
 
-    }
   });
 
 
