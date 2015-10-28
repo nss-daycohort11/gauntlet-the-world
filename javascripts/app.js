@@ -137,8 +137,8 @@ $(document).ready(function() {
       newPlayer.class = new WallaceWells;
     }else if (clickedButton === "KnivesChau") {
       newPlayer.class = new KnivesChau;
-    } else if (clickedButton === "GideoGraves") {
-      newPlayer.class = new GideoGraves;
+    } else if (clickedButton === "GideonGraves") {
+      newPlayer.class = new GideonGraves;
     }else if (clickedButton === "LucasLee") {
       newPlayer.class = new LucasLee;
     }else if (clickedButton === "MatthewPatel") {
