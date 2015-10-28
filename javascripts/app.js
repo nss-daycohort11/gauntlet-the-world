@@ -62,7 +62,7 @@ $(document).ready(function() {
         moveAlong =($("#player-name").val() !== "");
         break;
     }
-    console.log("isGood", newPlayer.isGood);
+    // console.log("isGood", newPlayer.isGood);
     if (moveAlong) {
       $(".card").hide();
       $("." + nextCard).show();
@@ -188,8 +188,8 @@ $(document).ready(function() {
       } else if (newPlayer.class === "Surprise") {
         newPlayer.generateClass();
       } else {
-          console.log("newPlayer",newPlayer);
-          console.log("our Health before modifying", newPlayer.health);
+          // console.log("newPlayer",newPlayer);
+          // console.log("our Health before modifying", newPlayer.health);
           newPlayer.health += newPlayer.class.healthBonus;
           newPlayer.strength +=  newPlayer.class.strengthBonus;
           newPlayer.intelligence +=  newPlayer.class.intelligenceBonus;
@@ -222,8 +222,6 @@ $(document).ready(function() {
       // Attack GAMEPLAY
       if (clickedButton === "attack") {
             console.log("You attacked!!!!");
-            console.log("newPlayer",newPlayer);
-            console.log("Opponent",opponent)
             newPlayer.health -= opponent.strength * 0.1 + opponent.weapon.damage;
       $(".opponentHP").html("HP: "+opponent.health);
 
@@ -241,14 +239,17 @@ $(document).ready(function() {
               opponent.health = 0;
       $(".playerHP").html("HP: " + opponent.health);
         alert("DOUBLE KNOCK-OUT!!!!");
+        console.log("DOUBLE KNOCK-OUT!!!!");
       } else {
         alert("KO! YOU LOSE!");
+        console.log("KO! YOU LOSE!");
       }
     } else if (opponent.health <= 0) {
       $(this).children().remove();
       opponent.health = 0;
       $(".playerHP").html("HP: " + opponent.health);      newPlayer.health = 0;
         alert("KO! YOU WIN!!!");
+        console.log("KO! YOU WIN!!!");
     }
 
       }
