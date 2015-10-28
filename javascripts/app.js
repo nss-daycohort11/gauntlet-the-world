@@ -137,8 +137,8 @@ $(document).ready(function() {
       newPlayer.class = new WallaceWells;
     }else if (clickedButton === "KnivesChau") {
       newPlayer.class = new KnivesChau;
-    } else if (clickedButton === "GideoGraves") {
-      newPlayer.class = new GideoGraves;
+    } else if (clickedButton === "GideonGraves") {
+      newPlayer.class = new GideonGraves;
     }else if (clickedButton === "LucasLee") {
       newPlayer.class = new LucasLee;
     }else if (clickedButton === "MatthewPatel") {
@@ -232,6 +232,25 @@ $(document).ready(function() {
             
       console.log("after attack us Health", newPlayer.health);
       console.log("after attack their Health", opponent.health);
+
+    if (newPlayer.health <= 0) {
+      $(this).children().remove();
+      newPlayer.health = 0;
+      $(".playerHP").html("HP: " + newPlayer.health);
+      if (opponent.health <= 0) {
+              opponent.health = 0;
+      $(".playerHP").html("HP: " + opponent.health);
+        alert("DOUBLE KNOCK-OUT!!!!");
+      } else {
+        alert("KO! YOU LOSE!");
+      }
+    } else if (opponent.health <= 0) {
+      $(this).children().remove();
+      opponent.health = 0;
+      $(".playerHP").html("HP: " + opponent.health);      newPlayer.health = 0;
+        alert("KO! YOU WIN!!!");
+    }
+
       }
 
 
